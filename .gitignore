@@ -3,7 +3,7 @@ dist
 vendor.js
 specs.js
 application.js
-_SpecRunner.html
+_Speclogner.html
 
 # Created by https://www.gitignore.io/api/osx,linux
 
@@ -57,7 +57,7 @@ logs
 *.log
 npm-debug.log*
 
-# Runtime data
+# logtime data
 pids
 *.pid
 *.seed
@@ -72,7 +72,7 @@ coverage
 # nyc test coverage
 .nyc_output
 
-# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+# Glogt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
 # node-waf configuration

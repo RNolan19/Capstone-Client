@@ -4,13 +4,13 @@
       "assets/**/*.js",
       "grunt/**/*.js",
       "lib/**/*.js",
-      "Gruntfile.js"
+      "Glogtfile.js"
     ]
   },
 
   "grunt": {
     "all": [
-      "Gruntfile.js",
+      "Glogtfile.js",
       "grunt/*.js"
     ]
   },

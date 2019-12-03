@@ -1,17 +1,186 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <title>codeMitment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
-</html>
+    <!-- Do not add `link` tags-->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Do not add `script` tags-->
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
+  <body>
+    <h1>codeMitment</h1>
+    <h2 id="message" class="message"></h2>
+
+      <!-- AUTHENTICATION FORMS START HERE -->
+
+    <h2 class='h2signup'>Sign-up</h2>
+    <form id="sign-up">
+      <input type="email" name="credentials[email]" placeholder="Enter email....">
+      <input type="password" name="credentials[password]" placeholder="Enter password....">
+      <input type="password" name="credentials[password_confirmation]" placeholder="Enter password again....">
+      <button>Sign Up!</button>
+    </form>
+
+    <h2 class='h2signin'>Sign-in</h2>
+    <form id="sign-in">
+      <input type="email" name="credentials[email]" placeholder="Enter email....">
+      <input type="password" name="credentials[password]" placeholder="Enter password....">
+      <button>Sign In!</button>
+    </form>
+
+    <h2 class='h2changepassword'>Change Password</h2>
+    <form id="change-password">
+      <input type="password" name="passwords[old]" placeholder="Enter old password....">
+      <input type="password" name="passwords[new]" placeholder="Enter new password....">
+      <button>Change Password!</button>
+    </form>
+    <br>
+
+    <form class='h2signout' id="sign-out">
+      <button class="btn btn-info my-2 my-sm-0 btn-inline btn-large" type="submit">Sign Out!</button>
+    </form>
+    <br>
+    <!-- AUTHENTICATION FORMS END HERE -->
+
+
+
+    <div class="container login-container">
+                <div class="row">
+                    <div class="col-md-6 login-form-1">
+                        <h3>Login for Form 1</h3>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btnSubmit" value="Login" />
+                            </div>
+                            <div class="form-group">
+                                <a href="#" class="ForgetPwd">Forget Password?</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6 login-form-2">
+                        <h3>Login for Form 2</h3>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btnSubmit" value="Login" />
+                            </div>
+                            <div class="form-group">
+
+                                <a href="#" class="ForgetPwd" value="Login">Forget Password?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+    <!-- CRUD RESOURCE STARTS HERE -->
+
+    <h2 class='h2addlog'>Add A Coding Session</h2>
+    <form id="add-log">
+      <input type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding">
+      <input type="text" name="log[summary]" placeholder="Summarize What You Did">
+      <input type="date" name="log[date]">
+      <button>Create Session</button>
+    </form>
+
+    <h2 class='h2updatelog'>Update A Coding Session</h2>
+    <form id="update-log">
+      <input type="number" name="log[id]" placeholder="Enter Log # To Update">
+      <input type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding">
+      <input type="text" name="log[summary]" placeholder="Summarize What You Did">
+      <input type="date" name="log[date]">
+      <button>Update Session</button>
+    </form>
+
+    <h2 class='h2deletelog'>Delete A Coding Session</h2>
+    <form id="delete-log">
+      <input type="number" name="log[id]" placeholder="Enter Log # To Delete ">
+      <button>Delete Session</button>
+    </form>
+    <br>
+
+
+    <form class='h2viewlogs' id="view-logs">
+      <button class="btn btn-info my-2 my-sm-0 btn-inline btn-large">View All Coding Sessions</button>
+    </form>
+    <!-- CRUD RESOURCE ENDS HERE -->
+
+  <!-- CALENDAR STARTS HERE
+  Would like to set up event listener, so if you click on a date, you can Change
+  it's class and have it light up.
+  Not part of MVP though
+
+  <div class="month">
+  <ul>
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+    <li>December<br><span style="font-size:18px">2019</span></li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>Mo</li>
+  <li>Tu</li>
+  <li>We</li>
+  <li>Th</li>
+  <li>Fr</li>
+  <li>Sa</li>
+  <li>Su</li>
+</ul>
+
+<ul class="days">
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li><span class="active">10</span></li>
+  <li>12</li>
+  <li>13</li>
+  <li>14</li>
+  <li>15</li>
+  <li>16</li>
+  <li>17</li>
+  <li>18</li>
+  <li>19</li>
+  <li>20</li>
+  <li>21</li>
+  <li>22</li>
+  <li>23</li>
+  <li>24</li>
+  <li>25</li>
+  <li>26</li>
+  <li>27</li>
+  <li>28</li>
+  <li>29</li>
+  <li>30</li>
+  <li>31</li>
+
+</ul> -->
+
+  </body>
+  </html>

@@ -15,11 +15,10 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
   //
-  $('#add-log').on('submit', gameEvents.onAddLog)
-  $('#view-logs').on('submit', gameEvents.onViewLogs)
-  $('#delete-log').on('submit', gameEvents.onDeleteLog)
-  $('#update-log').on('submit', gameEvents.onUpdateLog)
-
+  $('#add-log').on('submit', logEvents.onAddLog)
+  $('#view-logs').on('submit', logEvents.onViewLogs)
+  $('#delete-log').on('submit', logEvents.onDeleteLog)
+  $('#update-log').on('submit', logEvents.onUpdateLog)
 
   // Show when you first arrive at homepage
   $('#sign-up').show()
@@ -27,7 +26,6 @@ $(() => {
   $('.h2signup').show()
   $('.h2signin').show()
   $('#message').show()
-
 
   // Show after sign-in SUCCESS
   $('#change-password').hide()

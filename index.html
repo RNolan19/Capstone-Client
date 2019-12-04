@@ -121,24 +121,24 @@
 
     <h2 class='h2addlog'>Add A Coding Session</h2>
     <form id="add-log">
-      <input type="number" name="log[hours]" placeholder="# of Hours Spent Coding">
-      <input type="text" name="log[summary]" placeholder="Summarize What You Did">
-      <input type="string" name="log[date]"" placeholder="Enter Date">
+      <input type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding">
+      <input type="text" name="log[what_I_did]" placeholder="Summarize What You Did">
+      <input type="string" name="log[date]" placeholder="Enter Date">
       <button>Create Session</button>
     </form>
 
     <h2 class='h2updatelog'>Update A Coding Session</h2>
     <form id="update-log">
-      <input type="number" name="log[id]" placeholder="Enter Log # To Update">
-      <input type="number" name="log[hours]" placeholder="# of Hours Spent Coding">
-      <input type="text" name="log[summary]" placeholder="Summarize What You Did">
+      <input class=" mr-sm-2" type="string" name="log[id]" placeholder="Enter Unique ID #">
+      <input type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding">
+      <input type="text" name="log[what_I_did]" placeholder="Summarize What You Did">
       <input type="string" name="log[date]" placeholder="Enter Date">
       <button>Update Session</button>
     </form>
 
     <h2 class='h2deletelog'>Delete A Coding Session</h2>
     <form id="delete-log">
-      <input type="number" name="log[id]" placeholder="Enter Log # To Delete ">
+      <input type="string" name="log[id]" placeholder="Enter Log # To Delete ">
       <button>Delete Session</button>
     </form>
     <br>
@@ -206,6 +206,10 @@
   <li>31</li>
 
 </ul> -->
+
+<section>
+  <div id="content" class="content"></div>
+</section>
 
   </body>
   </html>

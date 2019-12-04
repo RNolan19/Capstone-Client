@@ -1,0 +1,27 @@
+<table class="table table-striped table-bordless table-sm">
+
+  <tr class= 'table-primary'>
+    <th scope="col">Obnoxiously Long ID #</th>
+    <th scope="col">Hours Spent Coding</th>
+    <th scope="col">What I Worked On</th>
+    <th scope="col">Date</th>
+  </tr>
+{{#each logs as |log|}}
+  {{log book}}
+
+
+
+
+
+    <tr class= 'table-light'>
+      <th scope="row">{{log._id}}</th>
+      <td>{{log.hours_coding}}</td>
+      <td>{{log.what_I_did}}</td>
+      <td>{{log.date}}</td>
+    </tr>
+
+
+
+{{/each}}
+
+</table>

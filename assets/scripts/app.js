@@ -6,29 +6,34 @@
 // const gameEvents = require('./game/events')
 // use require without a reference to ensure a file is bundled
 // require('./example')
+const authEvents = require('./auth/events')
+const logEvents = require('./log/events')
 
 $(() => {
-  // $('#sign-up').on('submit', authEvents.onSignUp)
-  // $('#sign-in').on('submit', authEvents.onSignIn)
-  // $('#change-password').on('submit', authEvents.onChangePassword)
-  // $('#sign-out').on('submit', authEvents.onSignOut)
+  $('#sign-up').on('submit', authEvents.onSignUp)
+  $('#sign-in').on('submit', authEvents.onSignIn)
+  $('#change-password').on('submit', authEvents.onChangePassword)
+  $('#sign-out').on('submit', authEvents.onSignOut)
   //
-  // $('#add-log').on('submit', gameEvents.onAddRun)
-  // $('#view-logs').on('submit', gameEvents.onViewRuns)
-  // $('#delete-log').on('submit', gameEvents.onDeleteRun)
-  // $('#update-log').on('submit', gameEvents.onUpdateRun)
+  $('#add-log').on('submit', gameEvents.onAddLog)
+  $('#view-logs').on('submit', gameEvents.onViewLogs)
+  $('#delete-log').on('submit', gameEvents.onDeleteLog)
+  $('#update-log').on('submit', gameEvents.onUpdateLog)
+
 
   // Show when you first arrive at homepage
-  $('#sign-up').hide()
-  $('#sign-in').hide()
-  $('.h2signup').hide()
-  $('.h2signin').hide()
+  $('#sign-up').show()
+  $('#sign-in').show()
+  $('.h2signup').show()
+  $('.h2signin').show()
+  $('#message').show()
+
 
   // Show after sign-in SUCCESS
-  $('#change-password').show()
-  $('.h2changepassword').show()
-  $('#sign-out').show()
-  $('.h2signout').show()
+  $('#change-password').hide()
+  $('.h2changepassword').hide()
+  $('#sign-out').hide()
+  $('.h2signout').hide()
 
   $('#add-log').hide()
   $('.h2addlog').hide()

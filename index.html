@@ -36,7 +36,7 @@
   </nav>
 
 <!-- NAV BAR ENDETH -->
-
+    <br>
     <h2 id="message" class="message"></h2>
 
       <!-- AUTHENTICATION FORMS START HERE -->
@@ -121,18 +121,18 @@
 
     <h2 class='h2addlog'>Add A Coding Session</h2>
     <form id="add-log">
-      <input type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding">
+      <input type="number" name="log[hours]" placeholder="# of Hours Spent Coding">
       <input type="text" name="log[summary]" placeholder="Summarize What You Did">
-      <input type="date" name="log[date]">
+      <input type="string" name="log[date]"" placeholder="Enter Date">
       <button>Create Session</button>
     </form>
 
     <h2 class='h2updatelog'>Update A Coding Session</h2>
     <form id="update-log">
       <input type="number" name="log[id]" placeholder="Enter Log # To Update">
-      <input type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding">
+      <input type="number" name="log[hours]" placeholder="# of Hours Spent Coding">
       <input type="text" name="log[summary]" placeholder="Summarize What You Did">
-      <input type="date" name="log[date]">
+      <input type="string" name="log[date]" placeholder="Enter Date">
       <button>Update Session</button>
     </form>
 
@@ -148,6 +148,7 @@
       <button class="btn btn-info my-2 my-sm-0 btn-inline btn-large">View All Coding Sessions</button>
     </form>
     <!-- CRUD RESOURCE ENDS HERE -->
+
 
   <!-- CALENDAR STARTS HERE
   Would like to set up event listener, so if you click on a date, you can Change

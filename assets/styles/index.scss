@@ -1,11 +1,85 @@
 @import '~bootstrap/scss/bootstrap';
 
-ul {list-style-type: none;}
+ul {
+  list-style-type: none;
+}
+
 body {
-  background: url('./public/today.png') no-repeat center center fixed;
+  background: url("./public/today.png") no-repeat center center fixed;
   background-size: cover;
   font-family: Verdana, sans-serif;
 }
+
+.navbar {
+  background-color: #89cff0;
+}
+
+// SIGN IN / SIGN UP MODAL
+.login-container {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.login-form-1 {
+  background: white;
+  padding: 5%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-form-1 h3 {
+  text-align: center;
+  color: #333;
+}
+
+.login-form-2 {
+  padding: 5%;
+  background: #0062cc;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-form-2 h3 {
+  text-align: center;
+  color: #fff;
+}
+
+.login-container form {
+  padding: 10%;
+}
+
+.btnSubmit {
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  border: none;
+  cursor: pointer;
+}
+
+.login-form-1 .btnSubmit {
+  font-weight: 600;
+  color: #fff;
+  background-color: #0062cc;
+}
+
+.login-form-2 .btnSubmit {
+  font-weight: 600;
+  color: #0062cc;
+  background-color: #fff;
+}
+
+.login-form-2 .ForgetPwd {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-form-1 .ForgetPwd {
+  color: #0062cc;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+
+// CALENDAR START HERE
 
 /* Month header */
 .month {
@@ -14,91 +88,33 @@ body {
   background: #1abc9c;
   text-align: center;
 }
-
 /* Month list */
 .month ul {
   margin: 0;
   padding: 0;
 }
 
-.login-container{
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
-.login-form-1{
-  background: white;
-    padding: 5%;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-}
-.login-form-1 h3{
-    text-align: center;
-    color: #333;
-}
-.login-form-2{
-    padding: 5%;
-    background: #0062cc;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-}
-.login-form-2 h3{
-    text-align: center;
-    color: #fff;
-}
-.login-container form{
-    padding: 10%;
-}
-.btnSubmit
-{
-    width: 50%;
-    border-radius: 1rem;
-    padding: 1.5%;
-    border: none;
-    cursor: pointer;
-}
-.login-form-1 .btnSubmit{
-    font-weight: 600;
-    color: #fff;
-    background-color: #0062cc;
-}
-.login-form-2 .btnSubmit{
-    font-weight: 600;
-    color: #0062cc;
-    background-color: #fff;
-}
-
-.login-form-2 .ForgetPwd{
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.login-form-1 .ForgetPwd{
-    color: #0062cc;
-    font-weight: 600;
-    text-decoration: none;
-}.month ul li {
+.month ul li {
   color: white;
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 3px;
 }
-
 /* Previous button inside month header */
 .month .prev {
   float: left;
   padding-top: 10px;
 }
-
 /* Next button */
 .month .next {
   float: right;
   padding-top: 10px;
 }
-
 /* Weekdays (Mon-Sun) */
 .weekdays {
   margin: 0;
   padding: 10px 0;
-  background-color:#ddd;
+  background-color: #ddd;
 }
 
 .weekdays li {
@@ -107,7 +123,6 @@ body {
   color: #666;
   text-align: center;
 }
-
 /* Days (1-31) */
 .days {
   padding: 10px 0;
@@ -121,66 +136,12 @@ body {
   width: 13.6%;
   text-align: center;
   margin-bottom: 5px;
-  font-size:12px;
+  font-size: 12px;
   color: #777;
 }
-
 /* Highlight the "current" day */
 .days li .active {
   padding: 5px;
   background: #1abc9c;
-  color: white !important
-}
-
-.login-container{
-    margin-top: 5%;
-    margin-bottom: 5%;
-}
-.login-form-1{
-    padding: 5%;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-}
-.login-form-1 h3{
-    text-align: center;
-    color: #333;
-}
-.login-form-2{
-    padding: 5%;
-    background: #0062cc;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-}
-.login-form-2 h3{
-    text-align: center;
-    color: #fff;
-}
-.login-container form{
-    padding: 10%;
-}
-.btnSubmit
-{
-    width: 50%;
-    border-radius: 1rem;
-    padding: 1.5%;
-    border: none;
-    cursor: pointer;
-}
-.login-form-1 .btnSubmit{
-    font-weight: 600;
-    color: #fff;
-    background-color: #0062cc;
-}
-.login-form-2 .btnSubmit{
-    font-weight: 600;
-    color: #0062cc;
-    background-color: #fff;
-}
-.login-form-2 .ForgetPwd{
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-}
-.login-form-1 .ForgetPwd{
-    color: #0062cc;
-    font-weight: 600;
-    text-decoration: none;
+  color: white !important;
 }

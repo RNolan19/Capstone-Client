@@ -16,82 +16,106 @@
     <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
     <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
   </head>
+
+<!-- BODY STARTS HERE -->
+
   <body>
-    <h1>codeMitment</h1>
+
+  <!-- NAV BAR STARTS HERE -->
+    <nav class="navbar bg-primary text-white justify-content-sm-between">
+    <a class="navbar-brand">Welcome To CodeMitment: The App That Tracks Your Coding Habits</a>
+      <form class="form-inline h2changepassword" id="change-password">
+        <input type="password" class="form-control" name="passwords[old]" placeholder="Enter Old Password *">
+        <input type="password" class="form-control" name="passwords[new]" placeholder="Enter New Password *">
+        <button type-"button" class="btn btn-outline-light btn-large">Change Password!</button>
+      </form>
+
+      <form class='h2signout' id="sign-out">
+        <button class="btn btn-danger btn-inline btn-large" type="submit">Sign Out!</button>
+      </form>
+  </nav>
+
+<!-- NAV BAR ENDETH -->
+
     <h2 id="message" class="message"></h2>
 
       <!-- AUTHENTICATION FORMS START HERE -->
 
-    <h2 class='h2signup'>Sign-up</h2>
+    <!-- <h2 class='h2signup'>Sign-up</h2>
     <form id="sign-up">
       <input type="email" name="credentials[email]" placeholder="Enter email....">
       <input type="password" name="credentials[password]" placeholder="Enter password....">
       <input type="password" name="credentials[password_confirmation]" placeholder="Enter password again....">
       <button>Sign Up!</button>
-    </form>
+    </form> -->
 
-    <h2 class='h2signin'>Sign-in</h2>
-    <form id="sign-in">
+    <!-- <h2 class='h2signin'>Sign-in</h2>
+    <form>
       <input type="email" name="credentials[email]" placeholder="Enter email....">
       <input type="password" name="credentials[password]" placeholder="Enter password....">
       <button>Sign In!</button>
-    </form>
+    </form> -->
 
-    <h2 class='h2changepassword'>Change Password</h2>
+    <!-- <h2 class='h2changepassword'>Change Password</h2>
     <form id="change-password">
       <input type="password" name="passwords[old]" placeholder="Enter old password....">
       <input type="password" name="passwords[new]" placeholder="Enter new password....">
       <button>Change Password!</button>
-    </form>
-    <br>
+    </form> -->
 
-    <form class='h2signout' id="sign-out">
+    <!-- <form class='h2signout' id="sign-out">
       <button class="btn btn-info my-2 my-sm-0 btn-inline btn-large" type="submit">Sign Out!</button>
-    </form>
-    <br>
+    </form> -->
     <!-- AUTHENTICATION FORMS END HERE -->
 
 
+   <!-- SIGN-IN + SIGN-UP MODAL STARTS HERE -->
+<div class="container login-container h2signup">
+            <div class="row">
+                <div class="col-md-6 login-form-1">
+                    <h3>Sign Up</h3>
+                    <form id="sign-up">
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="credentials[email]" placeholder="Enter Email *">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="credentials[password]" placeholder="Enter Password *">
+                        </div>
+                        <div class="form-group">
+                          <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Confirm Password *">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Login" />
+                        </div>
+                        <div class="form-group">
+                            <a href="#" class="ForgetPwd">Forgot Password?</a>
+                        </div>
+                    </form>
+                </div>
 
-    <div class="container login-container">
-                <div class="row">
-                    <div class="col-md-6 login-form-1">
-                        <h3>Login for Form 1</h3>
-                        <form>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Email *" value="" />
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Your Password *" value="" />
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" class="btnSubmit" value="Login" />
-                            </div>
-                            <div class="form-group">
-                                <a href="#" class="ForgetPwd">Forget Password?</a>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-6 login-form-2">
-                        <h3>Login for Form 2</h3>
-                        <form>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Email *" value="" />
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Your Password *" value="" />
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" class="btnSubmit" value="Login" />
-                            </div>
-                            <div class="form-group">
 
-                                <a href="#" class="ForgetPwd" value="Login">Forget Password?</a>
-                            </div>
-                        </form>
-                    </div>
+                <div class="col-md-6 login-form-2 h2signin">
+                    <h3>Already Signed Up? Sign In Here!</h3>
+                    <form id="sign-in">
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="credentials[email]" placeholder="Enter Email *">
+                        </div>
+                        <div class="form-group">
+                          <input type="password" class="form-control" name="credentials[password]" placeholder="Enter Password *">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Login" />
+                        </div>
+                        <div class="form-group">
+
+                            <a href="#" class="ForgetPwd" value="Login">Forgot Password?</a>
+                        </div>
+                    </form>
                 </div>
             </div>
+        </div>
+    <!-- SIGN-IN + SIGN-UP MODAL ENDS HERE -->
+
 
     <!-- CRUD RESOURCE STARTS HERE -->
 
@@ -128,9 +152,9 @@
   <!-- CALENDAR STARTS HERE
   Would like to set up event listener, so if you click on a date, you can Change
   it's class and have it light up.
-  Not part of MVP though
+  Not part of MVP though -->
 
-  <div class="month">
+  <!-- <div class="month">
   <ul>
     <li class="prev">&#10094;</li>
     <li class="next">&#10095;</li>

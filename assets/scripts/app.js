@@ -18,15 +18,18 @@ $(() => {
   // $('#delete-log').on('submit', gameEvents.onDeleteRun)
   // $('#update-log').on('submit', gameEvents.onUpdateRun)
 
+  // Show when you first arrive at homepage
   $('#sign-up').hide()
-  $('.h2signup').hide()
   $('#sign-in').hide()
-  $('.h2signins').hide()
+  $('.h2signup').hide()
+  $('.h2signin').hide()
 
-  $('#change-password').hide()
-  $('.h2changepassword').hide()
-  $('#sign-out').hide()
-  $('.h2signout').hide()
+  // Show after sign-in SUCCESS
+  $('#change-password').show()
+  $('.h2changepassword').show()
+  $('#sign-out').show()
+  $('.h2signout').show()
+
   $('#add-log').hide()
   $('.h2addlog').hide()
   $('#view-logs').hide()

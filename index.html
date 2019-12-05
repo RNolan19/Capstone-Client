@@ -7,9 +7,9 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
+    <!--- Include the above in your HEAD tag ->
 
-    <!-- Do not add `link` tags-->
+    <!- Do not add `link` tags-->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
     <!-- Do not add `script` tags-->
@@ -22,6 +22,7 @@
 <body>
 
   <!-- NAV BAR STARTS HERE -->
+
   <nav class="navbar bg-primary text-white ">
     <a class="navbar-brand">Welcome To CodeMitment: The App That Tracks Your Coding Habits</a>
 
@@ -34,11 +35,13 @@
       <button class="btn btn-primary my-2 my-sm-0 btn-inline btn-large">View All My Coding Sessions</button>
     </form>
 
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Manage My Coding Sessions</button>
 
-      <button type="button btn-primary" class="btn btn-link text-white" data-toggle="modal" data-target="#passwordModal">
+    <button class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Manage My Coding Sessions</button>
+
+      <button class="btn btn-primary" id="change-pw" data-toggle="modal" data-target="#passwordModal">
       Change Password
       </button>
+
 
 
       <form class='h2signout' id="sign-out">
@@ -46,8 +49,9 @@
       </form>
     </div>
   </nav>
-
 <!-- NAV BAR ENDETH -->
+
+
     <br>
     <h2 id="message" class="message"></h2>
 
@@ -129,6 +133,7 @@
     <!-- SIGN-IN + SIGN-UP MODAL ENDS HERE -->
 
 
+
     <!-- CRUD RESOURCE STARTS HERE -->
 
     <!-- <h2 class='h2addlog'>Add A Coding Session</h2>
@@ -179,11 +184,7 @@
         <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
-              Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
-              Register</a>
+              Make Changes Below</a>
           </li>
         </ul>
 
@@ -294,6 +295,7 @@
   <a href="" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalLRForm">Launch
     Modal LogIn/Register</a>
 </div>
+
 
     <!-- MANAGE MY RESOURCES MODAL ENDETH -->
 

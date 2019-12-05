@@ -79,6 +79,8 @@ const onSignOutSuccess = function (responseData) {
   $('.h2signin').show()
   $('.h2signup').show()
 
+  $('.navbar-right').hide()
+  $('#change-pw').hide()
   $('#change-password').hide()
   $('.h2changepassword').hide()
   $('#sign-out').hide()

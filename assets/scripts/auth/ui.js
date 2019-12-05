@@ -37,6 +37,7 @@ const onSignInSuccess = function (responseData) {
   $('.h2signin').hide()
   $('.h2signup').hide()
 
+  $('.navbar-right').show()
   $('#change-password').show()
   $('.h2changepassword').show()
   $('#sign-out').show()

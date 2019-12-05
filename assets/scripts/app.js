@@ -29,6 +29,7 @@ $(() => {
   $('#message').show()
 
   // Show after sign-in SUCCESS
+  $('.navbar-right').hide()
   $('#change-password').hide()
   $('.h2changepassword').hide()
   $('#sign-out').hide()

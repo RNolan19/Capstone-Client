@@ -58,7 +58,7 @@ const onSignInFailure = function () {
 
 const onChangePasswordSuccess = function () {
   successMessage('Password changed successfully!')
-  setTimeout(function () { successMessage('') }, 1000)
+  setTimeout(function () { successMessage('') }, 3000)
   $('#change-password').trigger('reset')
 }
 

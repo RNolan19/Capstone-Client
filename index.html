@@ -19,20 +19,28 @@
 
 <!-- BODY STARTS HERE -->
 
-  <body>
+<body>
 
   <!-- NAV BAR STARTS HERE -->
-    <nav class="navbar bg-primary text-white justify-content-sm-between">
+  <nav class="navbar bg-primary text-white ">
     <a class="navbar-brand">Welcome To CodeMitment: The App That Tracks Your Coding Habits</a>
-      <form class="form-inline h2changepassword" id="change-password">
-        <input type="password" class="form-control" name="passwords[old]" placeholder="Enter Old Password *">
-        <input type="password" class="form-control" name="passwords[new]" placeholder="Enter New Password *">
-        <button type-"button" class="btn btn-outline-light btn-large">Change Password!</button>
-      </form>
+
+    <div class="navbar-right form-inline">
+    <!-- <form class='h2viewlogs' id="view-logs">
+      <button class="btn btn-info my-2 my-sm-0 btn-inline btn-large">View All Coding Sessions</button>
+    </form>  -->
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Manage Sessions</button>
+
+      <button type="button" class="btn btn-link text-white" data-toggle="modal" data-target="#passwordModal">
+      Change My Password
+      </button>
+
 
       <form class='h2signout' id="sign-out">
         <button class="btn btn-danger btn-inline btn-large" type="submit">Sign Out!</button>
       </form>
+    </div>
   </nav>
 
 <!-- NAV BAR ENDETH -->
@@ -70,7 +78,7 @@
 
 
    <!-- SIGN-IN + SIGN-UP MODAL STARTS HERE -->
-<div class="container login-container h2signup">
+<div class="container login-container h2signup" id="login">
             <div class="row">
                 <div class="col-md-6 login-form-1">
                     <h3>Sign Up</h3>
@@ -119,35 +127,201 @@
 
     <!-- CRUD RESOURCE STARTS HERE -->
 
-    <h2 class='h2addlog'>Add A Coding Session</h2>
+    <!-- <h2 class='h2addlog'>Add A Coding Session</h2>
     <form id="add-log">
       <input type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding">
       <input type="text" name="log[what_I_did]" placeholder="Summarize What You Did">
       <input type="string" name="log[date]" placeholder="Enter Date">
       <button>Create Session</button>
-    </form>
+    </form> -->
 
-    <h2 class='h2updatelog'>Update A Coding Session</h2>
+    <!-- <h2 class='h2updatelog'>Update A Coding Session</h2>
     <form id="update-log">
       <input class=" mr-sm-2" type="string" name="log[id]" placeholder="Enter Unique ID #">
       <input type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding">
       <input type="text" name="log[what_I_did]" placeholder="Summarize What You Did">
       <input type="string" name="log[date]" placeholder="Enter Date">
       <button>Update Session</button>
-    </form>
+    </form> -->
 
-    <h2 class='h2deletelog'>Delete A Coding Session</h2>
+    <!-- <h2 class='h2deletelog'>Delete A Coding Session</h2>
     <form id="delete-log">
       <input type="string" name="log[id]" placeholder="Enter Log # To Delete ">
       <button>Delete Session</button>
     </form>
-    <br>
+    <br> -->
 
-
-    <form class='h2viewlogs' id="view-logs">
+    <!-- <form class='h2viewlogs' id="view-logs">
       <button class="btn btn-info my-2 my-sm-0 btn-inline btn-large">View All Coding Sessions</button>
-    </form>
+    </form> -->
     <!-- CRUD RESOURCE ENDS HERE -->
+
+
+
+    <!-- MANAGE MY RESOURCES MODAL STARTS -->
+
+
+    <!--Modal: Login / Register Form-->
+<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered cascading-modal" role="document">
+    <!--Content-->
+    <div class="modal-content">
+
+      <!--Modal cascading tabs-->
+      <div class="modal-c-tabs">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
+              Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
+              Register</a>
+          </li>
+        </ul>
+
+        <!-- Tab panels -->
+        <div class="tab-content">
+          <!--Panel 7-->
+          <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+            <!--Body-->
+            <div class="modal-body mb-1">
+              <div class="md-form form-sm mb-5">
+                <i class="fas fa-envelope prefix"></i>
+                <h2 class='h2addlog'>Add A Coding Session</h2>
+                <form id="add-log">
+                  <input type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding" class="form-control form-control validate">
+                  <input type="text" name="log[what_I_did]" placeholder="Summarize What You Did" class="form-control form-control validate" >
+                  <input type="string" name="log[date]" placeholder="Enter Date" class="form-control form-control validate">
+                <!-- <input type="email" id="modalLRInput10" class="form-control form-control-sm validate"> -->
+                <!-- <label data-error="wrong" data-success="right" for="modalLRInput10">Your email</label> -->
+                <button class="btn btn-primary">Add Session</button>
+              </form>
+              </div>
+
+
+              <div class="md-form form-sm mb-4">
+                <i class="fas fa-lock prefix"></i>
+                <h2 class='h2updatelog'>Update A Coding Session</h2>
+                <form id="update-log">
+                  <input class="form-control form-control validate" type="string" name="log[id]" placeholder="Enter Unique ID #">
+                  <input class="form-control form-control validate" type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding">
+                  <input class="form-control form-control validate" type="text" name="log[what_I_did]" placeholder="Summarize What You Did">
+                  <input class="form-control form-control validate" type="string" name="log[date]" placeholder="Enter Date">
+                  <button class="btn btn-primary">Update Session</button>
+                </form>
+                <!-- <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="modalLRInput11">Your password</label> -->
+              </div>
+
+              <div class="md-form form-sm mb-4">
+                <i class="fas fa-lock prefix"></i>
+                <h2 class='h2deletelog'>Delete A Coding Session</h2>
+                <form id="delete-log">
+                  <input class="form-control form-control validate" type="string" name="log[id]" placeholder="Enter Log # To Delete ">
+                  <button class="btn btn-primary">Delete Session</button>
+                </form>
+              </div>
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer">
+              <!-- <div class="options text-center text-md-right mt-1">
+                <p>Not a member? <a href="#" class="blue-text">Sign Up</a></p>
+                <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+              </div> -->
+              <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+            </div>
+
+          </div>
+          <!--/.Panel 7-->
+
+          <!--Panel 8-->
+          <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+            <!--Body-->
+            <div class="modal-body">
+              <div class="md-form form-sm mb-5">
+                <i class="fas fa-envelope prefix"></i>
+                <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="modalLRInput12">Your email</label>
+              </div>
+
+              <div class="md-form form-sm mb-5">
+                <i class="fas fa-lock prefix"></i>
+                <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="modalLRInput13">Your password</label>
+              </div>
+
+              <div class="md-form form-sm mb-4">
+                <i class="fas fa-lock prefix"></i>
+                <input type="password" id="modalLRInput14" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>
+              </div>
+
+              <div class="text-center form-sm mt-2">
+                <button class="btn btn-info">Sign up <i class="fas fa-sign-in ml-1"></i></button>
+              </div>
+
+            </div>
+            <!--Footer-->
+            <div class="modal-footer">
+              <!-- <div class="options text-right">
+                <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
+              </div> -->
+              <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          <!--/.Panel 8-->
+        </div>
+
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!--Modal: Login / Register Form-->
+
+<div class="text-center">
+  <a href="" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalLRForm">Launch
+    Modal LogIn/Register</a>
+</div>
+
+    <!-- MANAGE MY RESOURCES MODAL ENDETH -->
+
+
+
+    <!-- CHANGE PASSWORD Modal STARTS HERE -->
+<div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="passwordModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="passwordModalLabel">Change Password</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+
+      <div class="modal-body">
+        <form class="form-inline h2changepassword" id="change-password">
+          <input type="password" class="form-control" name="passwords[old]" placeholder="Enter Old Password *">
+          <input type="password" class="form-control" name="passwords[new]" placeholder="Enter New Password *">
+          <button class="btn btn-primary">Save changes</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- CHANGE PASSWORD Modal STARTS HERE -->
+
+
 
 
   <!-- CALENDAR STARTS HERE

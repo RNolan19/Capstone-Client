@@ -8,8 +8,13 @@
   color: red;
 }
 
+.card-group {
+  display: flex;
+display: inline-table;
+}
+
 .message {
-  text-align: center;
+  // text-align: center;
 }
 
 ul {

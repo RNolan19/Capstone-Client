@@ -85,15 +85,14 @@ working with Handlebars and setting up the back-end with Express.
 * As a registered user, I would like to be able to update and delete how many hours I spent coding, if any changes need to be made.
 * As a registered user, I would like to look back and see what I worked on on a particular day.  Was I working on a project? Or studying?  What languages was I using, etc?
 
-### **Screenshots and Wireframes**
+### **Screenshots**
 <img src="public/Screenshot1.png">
 <img src="public/Screenshot2.png">
 <img src="public/Screenshot3.png">
 <img src="public/Screenshot4.png">
 
-<img src="public/IMG-6161.JPG">
-<img src="public/IMG-6162.JPG">
-<img src="public/IMG-6163.JPG">
+### **Wireframes**
+[Wireframes on IMGUR](https://imgur.com/a/2CYP9Kv)
 
 ### **Future Updates / Stretch Goals**
 If alotted more time to work on this project, I'd like to change how the app

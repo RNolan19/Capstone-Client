@@ -25,8 +25,10 @@ const onSignUpFailure = function () {
 }
 
 const onSignInSuccess = function (responseData) {
-  successMessage('Signed in successfully!')
-  setTimeout(function () { successMessage('') }, 1000)
+  // successMessage('Signed in successfully!')
+  // setTimeout(function () {
+  //   successMessage('')
+  // }, 1000)
   // save the user we got from the API inside of 'store', so we can use it later
   // from any file
   store.user = responseData.user
@@ -37,6 +39,8 @@ const onSignInSuccess = function (responseData) {
   $('.h2signin').hide()
   $('.h2signup').hide()
 
+  $('.quote').show()
+  $('.month').show()
   $('.navbar-right').show()
   $('#change-password').show()
   $('.h2changepassword').show()

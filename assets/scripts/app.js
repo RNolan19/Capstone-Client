@@ -27,6 +27,9 @@ $(() => {
   $('.h2signin').show()
   $('#message').show()
 
+  $('.quote').hide()
+  $('.month').hide()
+
   // Show after sign-in SUCCESS
   $('.navbar-right').hide()
   $('#change-password').hide()

@@ -28,7 +28,10 @@ const onAddLogFailure = function () {
 }
 
 const onViewLogsSuccess = (data) => {
-  successMessage('Here Are Your Most Recent Coding Sessions:')
+  successMessage('Here Are Your Coding Sessions For This Month:')
+  setTimeout(function () {
+    successMessage('')
+  }, 3000)
   console.log(data.logs)
   store.logs = data.logs
 
@@ -43,6 +46,9 @@ const onViewLogsFailure = function () {
 
 const onDeleteLogSuccess = function () {
   successMessage('Coding Session Deleted Successfully')
+  setTimeout(function () {
+    successMessage('')
+  }, 4000)
   $('#delete-log').trigger('reset')
   $('.content').empty()
 }

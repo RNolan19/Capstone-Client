@@ -28,7 +28,7 @@ const onAddLogFailure = function () {
 }
 
 const onViewLogsSuccess = (data) => {
-  successMessage('Here Are Your Coding Sessions:')
+  successMessage('Here Are Your Most Recent Coding Sessions:')
   console.log(data.logs)
   store.logs = data.logs
 

@@ -9,12 +9,19 @@
 }
 
 .card-group {
-  display: flex;
-display: inline-table;
+  // display: block;
+  display: inline-block;
+  // align-content: center;
+  // flex-direction: row;
+  //
+  // margin-left: auto;
+
+  // text-align: center;
+  // justify-content: space-around;
 }
 
 .message {
-  // text-align: center;
+  text-align: center;
 }
 
 ul {
@@ -23,8 +30,10 @@ ul {
 
 body {
   background: url("./public/today.png") no-repeat center center fixed;
+  background-color: white;
   background-size: cover;
   font-family: Verdana, sans-serif;
+  align-content: center;
 }
 
 .navbar {

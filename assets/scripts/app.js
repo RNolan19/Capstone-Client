@@ -18,6 +18,7 @@ $(() => {
   $('#add-log').on('submit', logEvents.onAddLog)
   $('#view-logs').on('submit', logEvents.onViewLogs)
   $('#delete-log').on('submit', logEvents.onDeleteLog)
+  $('.list-group delete-card').on('submit', logEvents.onDeleteLog)
   $('#update-log').on('submit', logEvents.onUpdateLog)
 
   // Show when you first arrive at homepage
@@ -29,6 +30,7 @@ $(() => {
 
   $('.quote').hide()
   $('.month').hide()
+  $('.feb').hide()
 
   // Show after sign-in SUCCESS
   $('.navbar-right').hide()

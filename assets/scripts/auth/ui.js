@@ -38,9 +38,10 @@ const onSignInSuccess = function (responseData) {
   $('#sign-up').hide()
   $('.h2signin').hide()
   $('.h2signup').hide()
+  $('.feb').hide()
 
-  $('.quote').show()
-  $('.month').show()
+  // $('.quote').show()
+  $('.jan').show()
   $('.navbar-right').show()
   $('#change-password').show()
   $('.h2changepassword').show()
@@ -73,8 +74,8 @@ const onChangePasswordFailure = function () {
 }
 
 const onSignOutSuccess = function (responseData) {
-  successMessage('Signed out successfully!')
-  setTimeout(function () { successMessage('') }, 1000)
+  successMessage('Signed out successfully.  Go Do Some More Coding!')
+  setTimeout(function () { successMessage('') }, 3000)
   $('.content').empty()
 
   $('#sign-in').show()
@@ -97,6 +98,10 @@ const onSignOutSuccess = function (responseData) {
   $('.h2deletelog').hide()
   $('#update-log').hide()
   $('.h2updatelog').hide()
+
+  $('.quote').hide()
+  $('.month').hide()
+  $('.feb').hide()
 }
 
 const onSignOutFailure = function () {

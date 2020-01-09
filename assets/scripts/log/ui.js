@@ -32,12 +32,40 @@ const onViewLogsSuccess = (data) => {
   setTimeout(function () {
     successMessage('')
   }, 3000)
-  console.log(data.logs)
-  store.logs = data.logs
 
-  const showLogsHtml = showLogsTemplate({ logs: data.logs })
-  $('.content').empty()
-  $('.content').append(showLogsHtml)
+  // January Logic
+  const dataLogsJan = data.logs.filter(item => (item.date[1] === '1') || item.date.includes('Jan') || item.date.includes('jan'))
+  console.log(dataLogsJan)
+  // const dateEntered = dataLogs.forEach(item => console.log(item.date[1]))
+  // console.log(dateEntered)
+  store.logs = dataLogsJan
+
+  const showLogsHtml = showLogsTemplate({ logs: dataLogsJan })
+  // console.log(dateEntered[1])
+  // if(dateEntered === '1')  {
+  // || dateEntered.includes('jan')  || dateEntered.includes('Jan'))
+  if (dataLogsJan) {
+    $('.content').empty()
+    $('.content').append(showLogsHtml)
+  }
+
+  // Feb Logic
+  // January Logic
+  const dataLogsFeb = data.logs.filter(item => (item.date[1] === '2') || item.date.includes('Feb') || item.date.includes('feb'))
+  console.log(dataLogsFeb)
+  // const dateEntered = dataLogs.forEach(item => console.log(item.date[1]))
+  // console.log(dateEntered)
+  store.logs = dataLogsFeb
+
+  const showLogsHtmlFeb = showLogsTemplate({ logs: dataLogsFeb })
+  // console.log(dateEntered[1])
+  // if(dateEntered === '1')  {
+  // || dateEntered.includes('jan')  || dateEntered.includes('Jan'))
+  if (dataLogsFeb) {
+    $('.feb').show()
+    $('.content-feb').empty()
+    $('.content-feb').append(showLogsHtmlFeb)
+  }
 }
 
 const onViewLogsFailure = function () {

@@ -22,6 +22,7 @@ const onViewLogs = function (event) {
 
 const onDeleteLog = function (event) {
   event.preventDefault()
+  console.log('I clicked the delete button')
   const formData = getFormFields(event.target)
   api.onDeleteLog(formData)
     .then(ui.onDeleteLogSuccess)

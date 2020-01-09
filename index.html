@@ -64,9 +64,14 @@
      <!-- <h1 style:"float:right" class="quote">Example Quote Text</h1>
      <h2 style:"float:left" class="month">January</h2> -->
 
-     <h1 class="quote" style="text-align:left;  float:left;">"First we make our habits, <br> &nbsp then our habits make us"</h1>
-     <h2 class="month" style="text-align:right; float:right;">January</h2>
+     <h1 class="quote jan" style="text-align:left;  float:left;">"First we make our habits, <br> &nbsp then our habits make us"</h1>
+     <h2 class="month jan" style="text-align:right; float:right;">January</h2>
      <hr style="clear:both;"/>
+
+
+  <!-- <div class="other-months" style="text-align:right; float:right;">
+     <h2 class="feb">February</h2>
+  </div> -->
 
       <!-- AUTHENTICATION FORMS START HERE -->
 
@@ -214,7 +219,7 @@
                 <form id="add-log">
                   <input type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding" class="form-control form-control validate">
                   <input type="text" name="log[what_I_did]" placeholder="Summarize What You Did" class="form-control form-control validate" >
-                  <input type="string" name="log[date]" placeholder="Enter Date" class="form-control form-control validate">
+                  <input type="string" name="log[date]" placeholder="MM/DD" class="form-control form-control validate">
                 <!-- <input type="email" id="modalLRInput10" class="form-control form-control-sm validate"> -->
                 <!-- <label data-error="wrong" data-success="right" for="modalLRInput10">Your email</label> -->
                 <button class="btn btn-primary">Add Session</button>
@@ -345,6 +350,17 @@
 
 <section>
   <div id="content" class="content"></div>
+</section>
+
+
+<hr />
+<hr />
+
+<section>
+  <h1 class="febquote feb" style="text-align:left;  float:left;">"Don't Think About Being Perfect, <br> &nbsp Think About Getting Better"</h1>
+  <h2 class="month feb" style="text-align:right; float:right;">February</h2>
+  <hr style="clear:both;"/>
+  <div id="content-feb" class="content-feb"></div>
 </section>
 
   </body>

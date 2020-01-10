@@ -3,6 +3,9 @@
 const store = require('../store')
 const showLogsTemplate = require('../templates/log-listing.handlebars')
 
+const deleteButton = document.querySelector('.delete-card')
+
+
 const successMessage = function (newText) {
   $('#message').text(newText)
   $('#message').removeClass('failure')
@@ -33,6 +36,8 @@ const onViewLogsSuccess = (data) => {
     successMessage('')
   }, 3000)
 
+  const dataID = data.logs
+
   // January Logic
   const dataLogsJan = data.logs.filter(item => (item.date[1] === '1') || item.date.includes('Jan') || item.date.includes('jan'))
   console.log(dataLogsJan)
@@ -48,6 +53,7 @@ const onViewLogsSuccess = (data) => {
     $('.content').empty()
     $('.content').append(showLogsHtml)
   }
+
 
   // Feb Logic
   // January Logic

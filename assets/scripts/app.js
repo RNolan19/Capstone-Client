@@ -17,8 +17,11 @@ $(() => {
   //
   $('#add-log').on('submit', logEvents.onAddLog)
   $('#view-logs').on('submit', logEvents.onViewLogs)
-  $('#delete-log').on('submit', logEvents.onDeleteLog)
-  $('.list-group delete-card').on('submit', logEvents.onDeleteLog)
+  // $('#delete-log').on('submit', logEvents.onDeleteLog)
+  // $('#content').on('click', '.delete-card', console.log('whatever'))
+
+  $('#content').on('click', '.delete-card', logEvents.onDeleteLog)
+
   $('#update-log').on('submit', logEvents.onUpdateLog)
 
   // Show when you first arrive at homepage

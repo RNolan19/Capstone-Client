@@ -20,14 +20,35 @@ const onViewLogs = function (event) {
     .catch(ui.onViewLogsFailure)
 }
 
+//right now if any button is clicked, we run the deleteLog function. It is deleting the first button
+
+
+
 const onDeleteLog = function (event) {
   event.preventDefault()
-  console.log(event.target[0])
+  const buttons = document.querySelectorAll('.delete-card')
+  console.log(buttons)
 
-  const logId = $(event.target)[0]
-  console.log(logId)
+  // the event.target is the button that is clicked
+  const buttonThatGotClicked = event.currentTarget
+  // log that to make sure we have the right one
+  console.log(buttonThatGotClicked)
+  // the nextElement after the delete button (which I've hid) is the long ID number
+  console.log(buttonThatGotClicked.nextElementSibling)
+  // this gives you just the long Id
+  console.log(buttonThatGotClicked.nextElementSibling.textContent)
 
-  api.onDeleteLog(formData)
+  // put the long ID in a variable + pass that to the API
+  const logId = buttonThatGotClicked.nextElementSibling.textContent
+
+  // console.log(buttonThatGotClicked.parentElement('log-id').classList('.log-id'))
+  // console.log($(buttonThatGotClicked.parent('log-id')))
+  // console.log(eventTarget.textContent)
+
+    // const logId = document.querySelector('.log-id').textContent
+    // console.log(logId)
+
+  api.onDeleteLog(logId)
     .then(ui.onDeleteLogSuccess)
     .catch(ui.onDeleteLogFailure)
 }

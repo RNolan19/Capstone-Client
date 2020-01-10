@@ -21,6 +21,7 @@ $(() => {
   // $('#content').on('click', '.delete-card', console.log('whatever'))
 
   $('#content').on('click', '.delete-card', logEvents.onDeleteLog)
+  $('#content-feb').on('click', '.delete-card', logEvents.onDeleteLog)
 
   $('#update-log').on('submit', logEvents.onUpdateLog)
 

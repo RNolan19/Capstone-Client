@@ -21,7 +21,7 @@ const failureMessage = function (newText) {
 const onAddLogSuccess = function () {
   successMessage('Coding Session Added Successfully!')
   $('.content').empty()
-
+  $('.content-feb').empty()
   $('#add-log').trigger('reset')
 }
 
@@ -39,8 +39,9 @@ const onViewLogsSuccess = (data) => {
   const dataID = data.logs
 
   // January Logic
+
   const dataLogsJan = data.logs.filter(item => (item.date[1] === '1') || item.date.includes('Jan') || item.date.includes('jan'))
-  console.log(dataLogsJan)
+  // console.log(dataLogsJan)
   // const dateEntered = dataLogs.forEach(item => console.log(item.date[1]))
   // console.log(dateEntered)
   store.logs = dataLogsJan
@@ -52,13 +53,13 @@ const onViewLogsSuccess = (data) => {
   if (dataLogsJan) {
     $('.content').empty()
     $('.content').append(showLogsHtml)
+    $('.log-id').hide()
+    $('.log-id-title').hide()
   }
 
-
   // Feb Logic
-  // January Logic
   const dataLogsFeb = data.logs.filter(item => (item.date[1] === '2') || item.date.includes('Feb') || item.date.includes('feb'))
-  console.log(dataLogsFeb)
+  // console.log(dataLogsFeb)
   // const dateEntered = dataLogs.forEach(item => console.log(item.date[1]))
   // console.log(dateEntered)
   store.logs = dataLogsFeb
@@ -71,6 +72,8 @@ const onViewLogsSuccess = (data) => {
     $('.feb').show()
     $('.content-feb').empty()
     $('.content-feb').append(showLogsHtmlFeb)
+    $('.log-id').hide()
+    $('.log-id-title').hide()
   }
 }
 
@@ -85,6 +88,7 @@ const onDeleteLogSuccess = function () {
   }, 4000)
   $('#delete-log').trigger('reset')
   $('.content').empty()
+  $('.content-feb').empty()
 }
 
 const onDeleteLogFailure = function () {

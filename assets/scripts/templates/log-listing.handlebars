@@ -1,6 +1,6 @@
 
 {{#each logs as |log|}}
-  {{log book}}
+  <!-- {{log book}} -->
 
 
     <div class="card-group" style="width: 12%;">
@@ -12,9 +12,9 @@
     <li class="list-group-item"><strong>Hours Coding: <br></strong>{{log.hours_coding}}</li>
     <li class="list-group-item"><strong>What I Worked On:</strong></li>
     <li class="list-group-item">{{log.what_I_did}}</li>
-    <button class="update-card btn btn-success">Update Session</button>
+    <button class="update-card btn btn-primary ">Update Session</button>
     <button id="delete-card" class="delete-card btn btn-danger">Delete Session</button>
-    <li class="list-group-item"><strong>Obnoxiously Long ID #: </strong></li>
+    <!-- <li class="log-id-title list-group-item"><strong>Obnoxiously Long ID #: </strong></li> -->
     <li class="log-id list-group-item">{{log.id}}</li>
   </ul>
 </div>

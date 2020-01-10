@@ -17,11 +17,14 @@ $(() => {
   //
   $('#add-log').on('submit', logEvents.onAddLog)
   $('#view-logs').on('submit', logEvents.onViewLogs)
-  // $('#delete-log').on('submit', logEvents.onDeleteLog)
-  // $('#content').on('click', '.delete-card', console.log('whatever'))
 
+  // Delete Card Event Listeners
   $('#content').on('click', '.delete-card', logEvents.onDeleteLog)
   $('#content-feb').on('click', '.delete-card', logEvents.onDeleteLog)
+
+  // Update Card Event Listeners
+  $('#content').on('click', '.update-card', logEvents.onUpdateLog)
+  $('#modalLRForm').modal({ show: false })
 
   $('#update-log').on('submit', logEvents.onUpdateLog)
 

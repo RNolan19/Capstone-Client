@@ -46,10 +46,10 @@ const onDeleteLog = function (logId) {
   })
 }
 
-const onUpdateLog = function (formData) {
+const onUpdateLog = function (formData, logId) {
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/logs/' + formData.log.id,
+    url: config.apiUrl + '/logs/' + logId,
     headers: {
       // the token was saved in the store when we signed up
       // we access it through store.user.token

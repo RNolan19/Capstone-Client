@@ -55,10 +55,35 @@ const onDeleteLog = function (event) {
 
 const onUpdateLog = function (event) {
   event.preventDefault()
-  const formData = getFormFields(event.target)
-  api.onUpdateLog(formData)
+  console.log('Event listener works')
+
+  const buttons = document.querySelectorAll('.update-card')
+  console.log(buttons)
+
+  // the event.target is the button that is clicked
+  const buttonThatGotClicked = event.currentTarget
+  // log that to make sure we have the right one
+  console.log(buttonThatGotClicked)
+  // the nextElement after the delete button (which I've hid) is the long ID number
+  console.log(buttonThatGotClicked.nextElementSibling)
+  // this gives you just the long Id
+  console.log(buttonThatGotClicked.nextElementSibling.nextElementSibling.textContent)
+
+  // put the long ID in a variable + pass that to the API
+  const logId = buttonThatGotClicked.nextElementSibling.nextElementSibling.textContent
+
+  $('#modalLRForm').modal('show')
+
+  const formDataTarget = document.querySelector('#update-log')
+  console.log(formDataTarget)
+
+  const formData = getFormFields(formDataTarget)
+  console.log(formData)
+
+  api.onUpdateLog(formData, logId)
     .then(ui.onUpdateLogSuccess)
     .catch(ui.onUpdateLogFailure)
+
 }
 
 module.exports = {

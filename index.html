@@ -232,12 +232,12 @@
               <div class="md-form form-sm mb-4">
                 <i class="fas fa-lock prefix"></i>
                 <h2 class='h2updatelog'>Update A Coding Session</h2>
-                <form id="update-log">
+                <form id="update-log" class="update-log">
                   <!-- <input class="form-control form-control validate" type="string" name="log[id]" placeholder="Enter Unique ID #"> -->
-                  <input class="form-control form-control validate" type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding">
+                  <input class="form-control form-control validate" id="hours" type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding">
                   <input class="form-control form-control validate" type="text" name="log[what_I_did]" placeholder="Summarize What You Did">
                   <input class="form-control form-control validate" type="string" name="log[date]" placeholder="Enter Date">
-                  <button class="update-button btn btn-primary" value="Update Session">Update Session</button>
+                  <button id='focustarget' value='none' class="update-button btn btn-primary" type="submit">Update Session</button>
                 </form>
                 <!-- <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
                 <label data-error="wrong" data-success="right" for="modalLRInput11">Your password</label> -->

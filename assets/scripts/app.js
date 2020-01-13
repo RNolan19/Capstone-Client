@@ -8,6 +8,7 @@
 // require('./example')
 const authEvents = require('./auth/events')
 const logEvents = require('./log/events')
+// const api = require('.log/api')
 
 $(() => {
   $('#sign-up').on('submit', authEvents.onSignUp)
@@ -23,10 +24,15 @@ $(() => {
   $('#content-feb').on('click', '.delete-card', logEvents.onDeleteLog)
 
   // Update Card Event Listeners
+  // update card is the button on the handlebars card
   $('#content').on('click', '.update-card', logEvents.onUpdateLog)
-  $('#modalLRForm').modal({ show: false })
+  // // $('#content').on('click', '.update-card', function () { $('#modalLRForm').modal({ show: true }) })
+  // $('#modalLRForm').modal({ show: false })
 
-  $('#update-log').on('submit', logEvents.onUpdateLog)
+  $('#content-feb').on('click', '.update-card', logEvents.onUpdateLog)
+
+  // update log is the button on the pop up modal form, that submits to the API
+  $('#update-log').on('submit', logEvents.sendFormData)
 
   // Show when you first arrive at homepage
   $('#sign-up').show()

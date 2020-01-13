@@ -8,12 +8,28 @@
   color: red;
 }
 
+// .cards {
+//   display: grid;
+//   grid-template-columns: repeat(4, 1fr);
+//   grid-gap: 20px;
+//   padding: 20px;
+// }
+//
+// .playerCard {
+//   background: white;
+//   padding: 20px;
+// }
+
 .card-group {
-  display: inline-block;
-  margin-left: 4%;
+  display: inline-grid;
+  grid-template-columns: 200px 200px 200px 200px 200px;
+  grid-template-rows: 60px 60px;
+
+  // grid-template-columns: repeat(4, 1fr);
+  // margin-left: 4%;
   padding: 5px;
-  align-content: center;
-  margin-bottom: 5px;
+  // align-content: center;
+  // margin-bottom: 5px;
 
   // display: inline-flex;
   // align-content: center;
@@ -61,6 +77,11 @@ body {
 
   font-size: 450%;
   // font-weight: bold;
+}
+
+.hours-coding {
+  font-size: 400%;
+  color: red;
 }
 
 .feb {

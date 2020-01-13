@@ -97,9 +97,10 @@ const onDeleteLogFailure = function () {
 }
 
 const onUpdateLogSuccess = function () {
+  $('.content').empty()
   successMessage('Coding Session Updated Successfully')
   $('#update-log').trigger('reset')
-  $('.content').empty()
+
 }
 
 const onUpdateLogFailure = function () {

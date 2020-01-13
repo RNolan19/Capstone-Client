@@ -9,6 +9,11 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Prata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nobile:700&display=swap" rel="stylesheet">
 
 
     <!--- Include the above in your HEAD tag ->
@@ -29,7 +34,7 @@
   <!-- NAV BAR STARTS HERE -->
 
   <nav class="navbar bg-primary text-white ">
-    <a class="navbar-brand">Welcome To CodeMitment: The App That Tracks Your Coding Habits</a>
+    <a class="navbar-brand">CodeMitment: The App That Tracks How Much Time You Spend Coding</a>
 
     <div class="navbar-right form-inline">
     <!-- <form class='h2viewlogs' id="view-logs">
@@ -37,11 +42,11 @@
     </form>  -->
 
     <form class='h2viewlogs' id="view-logs">
-      <button class="btn btn-primary my-2 my-sm-0 btn-inline btn-large">View All My Coding Sessions</button>
+      <button class="btn btn-primary my-2 my-sm-0 btn-inline btn-large">View My Coding Sessions</button>
     </form>
 
 
-    <button class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Manage My Coding Sessions</button>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Add Coding Session</button>
 
       <button class="btn btn-primary" id="change-pw" data-toggle="modal" data-target="#passwordModal">
       Change Password
@@ -58,7 +63,14 @@
 
 
     <br>
+  <section class="message-section">
     <h2 id="message" class="message"></h2>
+
+    <div class="alert alert-success" role="alert">
+  This is a success alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+</div>
+  </section>
+
 
 
      <!-- <h1 style:"float:right" class="quote">Example Quote Text</h1>
@@ -107,7 +119,7 @@
 <div class="container login-container h2signup" id="login">
             <div class="row">
                 <div class="col-md-6 login-form-1">
-                    <h3>Sign Up</h3>
+                    <h3 class="login">Sign Up</h3>
                     <form id="sign-up">
                         <div class="form-group">
                             <input type="email" class="form-control" name="credentials[email]" placeholder="Enter Email *">
@@ -122,14 +134,14 @@
                             <input type="submit" class="btnSubmit" value="Login" />
                         </div>
                         <div class="form-group">
-                            <a href="#" class="ForgetPwd">Forgot Password?</a>
+                            <!-- <a href="#" class="ForgetPwd">Forgot Password?</a> -->
                         </div>
                     </form>
                 </div>
 
 
                 <div class="col-md-6 login-form-2 h2signin">
-                    <h3>Already Signed Up? Sign In Here!</h3>
+                    <h3 class="login">Already Signed Up? Sign In Here!</h3>
                     <form id="sign-in">
                         <div class="form-group">
                             <input type="email" class="form-control" name="credentials[email]" placeholder="Enter Email *">
@@ -142,7 +154,7 @@
                         </div>
                         <div class="form-group">
 
-                            <a href="#" class="ForgetPwd" value="Login">Forgot Password?</a>
+                            <!-- <a href="#" class="ForgetPwd" value="Login">Forgot Password?</a> -->
                         </div>
                     </form>
                 </div>
@@ -236,7 +248,7 @@
                   <!-- <input class="form-control form-control validate" type="string" name="log[id]" placeholder="Enter Unique ID #"> -->
                   <input class="form-control form-control validate" id="hours" type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding">
                   <input class="form-control form-control validate" type="text" name="log[what_I_did]" placeholder="Summarize What You Did">
-                  <input class="form-control form-control validate" type="string" name="log[date]" placeholder="Enter Date">
+                  <input class="form-control form-control validate" type="string" name="log[date]" placeholder="MM/DD">
                   <button id='focustarget' value='none' class="update-button btn btn-primary" type="submit">Update Session</button>
                 </form>
                 <!-- <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
@@ -357,6 +369,7 @@
 
 <hr />
 <hr />
+<br>
 
 <section>
   <h1 class="febquote feb" style="text-align:left;  float:left;">"Don't Think About Being Perfect, <br> &nbsp Think About Getting Better"</h1>

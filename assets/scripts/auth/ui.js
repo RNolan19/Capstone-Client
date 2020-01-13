@@ -77,6 +77,7 @@ const onSignOutSuccess = function (responseData) {
   successMessage('Signed out successfully.  Go Do Some More Coding!')
   setTimeout(function () { successMessage('') }, 3000)
   $('.content').empty()
+  $('.content-feb').empty()
 
   $('#sign-in').show()
   $('#sign-in').trigger('reset')

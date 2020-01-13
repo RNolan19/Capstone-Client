@@ -18,6 +18,7 @@ $(() => {
   //
   $('#add-log').on('submit', logEvents.onAddLog)
   $('#view-logs').on('submit', logEvents.onViewLogs)
+  $('.alert-success').hide()
 
   // Delete Card Event Listeners
   $('#content').on('click', '.delete-card', logEvents.onDeleteLog)

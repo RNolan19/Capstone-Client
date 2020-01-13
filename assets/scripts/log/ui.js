@@ -5,11 +5,11 @@ const showLogsTemplate = require('../templates/log-listing.handlebars')
 
 const deleteButton = document.querySelector('.delete-card')
 
-
 const successMessage = function (newText) {
   $('#message').text(newText)
   $('#message').removeClass('failure')
   $('#message').addClass('success')
+  $('.alert-success').text(newText)
 }
 
 const failureMessage = function (newText) {
@@ -20,6 +20,7 @@ const failureMessage = function (newText) {
 
 const onAddLogSuccess = function () {
   successMessage('Coding Session Added Successfully!')
+  $('.alert-success').show('Coding Session Added Successfully!')
   $('.content').empty()
   $('.content-feb').empty()
   $('#add-log').trigger('reset')
@@ -98,9 +99,9 @@ const onDeleteLogFailure = function () {
 
 const onUpdateLogSuccess = function () {
   $('.content').empty()
+  $('.content-feb').empty()
   successMessage('Coding Session Updated Successfully')
   $('#update-log').trigger('reset')
-
 }
 
 const onUpdateLogFailure = function () {

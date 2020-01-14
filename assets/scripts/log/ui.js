@@ -9,7 +9,7 @@ const successMessage = function (newText) {
   $('#message').text(newText)
   $('#message').removeClass('failure')
   $('#message').addClass('success')
-  $('.alert-success').text(newText)
+  // $('.alert-success').text(newText)
 }
 
 const failureMessage = function (newText) {
@@ -20,10 +20,15 @@ const failureMessage = function (newText) {
 
 const onAddLogSuccess = function () {
   successMessage('Coding Session Added Successfully!')
-  $('.alert-success').show('Coding Session Added Successfully!')
+  // $('.alert-success').show('Coding Session Added Successfully!')
+  $('#modalLRForm').modal('hide')
   $('.content').empty()
   $('.content-feb').empty()
   $('#add-log').trigger('reset')
+  $('.feb').hide()
+  setTimeout(function () {
+    successMessage('')
+  }, 4000)
 }
 
 const onAddLogFailure = function () {
@@ -33,6 +38,8 @@ const onAddLogFailure = function () {
 
 const onViewLogsSuccess = (data) => {
   successMessage('Here Are Your Coding Sessions For This Month:')
+  // $('.alert-success').show('Here Are Your Coding Sessions For This Month:')
+  // successMessage('Here Are Your Coding Sessions For This Month:')
   setTimeout(function () {
     successMessage('')
   }, 3000)
@@ -98,10 +105,14 @@ const onDeleteLogFailure = function () {
 }
 
 const onUpdateLogSuccess = function () {
+  $('#modalLRForm').modal('hide')
   $('.content').empty()
   $('.content-feb').empty()
   successMessage('Coding Session Updated Successfully')
   $('#update-log').trigger('reset')
+  setTimeout(function () {
+    successMessage('')
+  }, 4000)
 }
 
 const onUpdateLogFailure = function () {

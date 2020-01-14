@@ -53,6 +53,11 @@
 
 .message {
   text-align: center;
+  font-family: 'Prata', serif;
+  font-weight: bold;
+
+  // font-family:'Playfair', serif;
+  // font-size: 150%;
 }
 
 ul {
@@ -79,6 +84,16 @@ body {
 .update-card,
 .delete-card {
   font-family: 'Nobile', serif;
+}
+
+.alert-success {
+//   bottom: 10rem;
+// left: 0;
+margin: auto;
+max-width: 30rem;
+// position: fixed;
+// right: 0;
+// z-index: 10000;
 }
 
 .month {
@@ -120,6 +135,7 @@ body {
 
 .login {
   font-family: 'Prata', serif;
+  font-weight: bold;
 }
 
 .login-form-1 {

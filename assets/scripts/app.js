@@ -8,6 +8,7 @@
 // require('./example')
 const authEvents = require('./auth/events')
 const logEvents = require('./log/events')
+// const api = require('.log/api')
 
 $(() => {
   $('#sign-up').on('submit', authEvents.onSignUp)
@@ -17,8 +18,22 @@ $(() => {
   //
   $('#add-log').on('submit', logEvents.onAddLog)
   $('#view-logs').on('submit', logEvents.onViewLogs)
-  $('#delete-log').on('submit', logEvents.onDeleteLog)
-  $('#update-log').on('submit', logEvents.onUpdateLog)
+  $('.alert-success').hide()
+
+  // Delete Card Event Listeners
+  $('#content').on('click', '.delete-card', logEvents.onDeleteLog)
+  $('#content-feb').on('click', '.delete-card', logEvents.onDeleteLog)
+
+  // Update Card Event Listeners
+  // update card is the button on the handlebars card
+  $('#content').on('click', '.update-card', logEvents.onUpdateLog)
+  // // $('#content').on('click', '.update-card', function () { $('#modalLRForm').modal({ show: true }) })
+  // $('#modalLRForm').modal({ show: false })
+
+  $('#content-feb').on('click', '.update-card', logEvents.onUpdateLog)
+
+  // update log is the button on the pop up modal form, that submits to the API
+  $('#update-log').on('submit', logEvents.sendFormData)
 
   // Show when you first arrive at homepage
   $('#sign-up').show()
@@ -26,6 +41,10 @@ $(() => {
   $('.h2signup').show()
   $('.h2signin').show()
   $('#message').show()
+
+  $('.quote').hide()
+  $('.month').hide()
+  $('.feb').hide()
 
   // Show after sign-in SUCCESS
   $('.navbar-right').hide()

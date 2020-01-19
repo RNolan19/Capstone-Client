@@ -1,20 +1,25 @@
 
 {{#each logs as |log|}}
-  {{log book}}
+  <!-- {{log book}} -->
 
-    <div class="card-group" style="width: 18rem;">
+
+    <div class="card-group card-deck" style="width: 12%;">
   <div class="card-header card-columns">
-    <strong>{{log.date}}</strong>
+    <!-- <strong>{{log.date}}</strong> -->
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item bg-primary text-white"><strong>{{log.date}}</strong></li>
-    <li class="list-group-item"><strong>Hours Spend Coding: </strong>{{log.hours_coding}}</li>
-    <li class="list-group-item"><strong>What I Worked On:</strong></li>
-    <li class="list-group-item">{{log.what_I_did}}</li>
-    <li class="list-group-item"><strong>Obnoxiously Long ID #: </strong></li>
-    <li class="list-group-item">{{log.id}}</li>
+    <li class="list-group-item bg-primary text-white card-date"><strong><a>{{log.date}}</a></strong></li>
+    <li class="list-group-item login"><strong>Hours Coding: </li>
+    <li class="list-group-item hours-coding"></strong>{{log.hours_coding}}</li>
+    <!-- <li class="list-group-item"><strong>What I Worked On:</strong></li> -->
+    <!-- <li class="list-group-item">{{log.what_I_did}}</li> -->
+    <button id={{log.id}} class="update-card btn btn-primary ">Update Session</button>
+    <button id="delete-card" class="delete-card btn btn-danger">Delete Session</button>
+    <!-- <li class="log-id-title list-group-item"><strong>Obnoxiously Long ID #: </strong></li> -->
+    <p class="log-id list-group-item">{{log.id}}</p>
   </ul>
 </div>
 {{/each}}
+
 
 </table>

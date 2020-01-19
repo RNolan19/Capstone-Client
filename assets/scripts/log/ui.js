@@ -3,10 +3,13 @@
 const store = require('../store')
 const showLogsTemplate = require('../templates/log-listing.handlebars')
 
+const deleteButton = document.querySelector('.delete-card')
+
 const successMessage = function (newText) {
   $('#message').text(newText)
   $('#message').removeClass('failure')
   $('#message').addClass('success')
+  // $('.alert-success').text(newText)
 }
 
 const failureMessage = function (newText) {
@@ -17,9 +20,15 @@ const failureMessage = function (newText) {
 
 const onAddLogSuccess = function () {
   successMessage('Coding Session Added Successfully!')
+  // $('.alert-success').show('Coding Session Added Successfully!')
+  $('#modalLRForm').modal('hide')
   $('.content').empty()
-
+  $('.content-feb').empty()
   $('#add-log').trigger('reset')
+  $('.feb').hide()
+  setTimeout(function () {
+    successMessage('')
+  }, 4000)
 }
 
 const onAddLogFailure = function () {
@@ -28,13 +37,52 @@ const onAddLogFailure = function () {
 }
 
 const onViewLogsSuccess = (data) => {
-  successMessage('Here Are Your Coding Sessions:')
-  console.log(data.logs)
-  store.logs = data.logs
+  successMessage('Here Are Your Coding Sessions For This Month:')
+  // $('.alert-success').show('Here Are Your Coding Sessions For This Month:')
+  // successMessage('Here Are Your Coding Sessions For This Month:')
+  setTimeout(function () {
+    successMessage('')
+  }, 3000)
 
-  const showLogsHtml = showLogsTemplate({ logs: data.logs })
-  $('.content').empty()
-  $('.content').append(showLogsHtml)
+  const dataID = data.logs
+
+  // January Logic
+
+  const dataLogsJan = data.logs.filter(item => (item.date[1] === '1') || item.date.includes('Jan') || item.date.includes('jan'))
+  // console.log(dataLogsJan)
+  // const dateEntered = dataLogs.forEach(item => console.log(item.date[1]))
+  // console.log(dateEntered)
+  store.logs = dataLogsJan
+
+  const showLogsHtml = showLogsTemplate({ logs: dataLogsJan })
+  // console.log(dateEntered[1])
+  // if(dateEntered === '1')  {
+  // || dateEntered.includes('jan')  || dateEntered.includes('Jan'))
+  if (dataLogsJan) {
+    $('.content').empty()
+    $('.content').append(showLogsHtml)
+    $('.log-id').hide()
+    $('.log-id-title').hide()
+  }
+
+  // Feb Logic
+  const dataLogsFeb = data.logs.filter(item => (item.date[1] === '2') || item.date.includes('Feb') || item.date.includes('feb'))
+  // console.log(dataLogsFeb)
+  // const dateEntered = dataLogs.forEach(item => console.log(item.date[1]))
+  // console.log(dateEntered)
+  store.logs = dataLogsFeb
+
+  const showLogsHtmlFeb = showLogsTemplate({ logs: dataLogsFeb })
+  // console.log(dateEntered[1])
+  // if(dateEntered === '1')  {
+  // || dateEntered.includes('jan')  || dateEntered.includes('Jan'))
+  if (dataLogsFeb) {
+    $('.feb').show()
+    $('.content-feb').empty()
+    $('.content-feb').append(showLogsHtmlFeb)
+    $('.log-id').hide()
+    $('.log-id-title').hide()
+  }
 }
 
 const onViewLogsFailure = function () {
@@ -43,8 +91,12 @@ const onViewLogsFailure = function () {
 
 const onDeleteLogSuccess = function () {
   successMessage('Coding Session Deleted Successfully')
+  setTimeout(function () {
+    successMessage('')
+  }, 4000)
   $('#delete-log').trigger('reset')
   $('.content').empty()
+  $('.content-feb').empty()
 }
 
 const onDeleteLogFailure = function () {
@@ -53,9 +105,14 @@ const onDeleteLogFailure = function () {
 }
 
 const onUpdateLogSuccess = function () {
+  $('#modalLRForm').modal('hide')
+  $('.content').empty()
+  $('.content-feb').empty()
   successMessage('Coding Session Updated Successfully')
   $('#update-log').trigger('reset')
-  $('.content').empty()
+  setTimeout(function () {
+    successMessage('')
+  }, 4000)
 }
 
 const onUpdateLogFailure = function () {

@@ -25,8 +25,10 @@ const onSignUpFailure = function () {
 }
 
 const onSignInSuccess = function (responseData) {
-  successMessage('Signed in successfully!')
-  setTimeout(function () { successMessage('') }, 1000)
+  // successMessage('Signed in successfully!')
+  // setTimeout(function () {
+  //   successMessage('')
+  // }, 1000)
   // save the user we got from the API inside of 'store', so we can use it later
   // from any file
   store.user = responseData.user
@@ -36,7 +38,10 @@ const onSignInSuccess = function (responseData) {
   $('#sign-up').hide()
   $('.h2signin').hide()
   $('.h2signup').hide()
+  $('.feb').hide()
 
+  // $('.quote').show()
+  $('.jan').show()
   $('.navbar-right').show()
   $('#change-password').show()
   $('.h2changepassword').show()
@@ -69,9 +74,10 @@ const onChangePasswordFailure = function () {
 }
 
 const onSignOutSuccess = function (responseData) {
-  successMessage('Signed out successfully!')
-  setTimeout(function () { successMessage('') }, 1000)
+  successMessage('Signed out successfully.  Go Do Some More Coding!')
+  setTimeout(function () { successMessage('') }, 3000)
   $('.content').empty()
+  $('.content-feb').empty()
 
   $('#sign-in').show()
   $('#sign-in').trigger('reset')
@@ -93,6 +99,10 @@ const onSignOutSuccess = function (responseData) {
   $('.h2deletelog').hide()
   $('#update-log').hide()
   $('.h2updatelog').hide()
+
+  $('.quote').hide()
+  $('.month').hide()
+  $('.feb').hide()
 }
 
 const onSignOutFailure = function () {

@@ -7,6 +7,16 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Prata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nobile:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+
+
     <!--- Include the above in your HEAD tag ->
 
     <!- Do not add `link` tags-->
@@ -15,6 +25,7 @@
     <!-- Do not add `script` tags-->
     <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
     <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
   </head>
 
 <!-- BODY STARTS HERE -->
@@ -24,7 +35,7 @@
   <!-- NAV BAR STARTS HERE -->
 
   <nav class="navbar bg-primary text-white ">
-    <a class="navbar-brand">Welcome To CodeMitment: The App That Tracks Your Coding Habits</a>
+    <a class="navbar-brand">CodeMitment: The App That Tracks How Much Time You Spend Coding</a>
 
     <div class="navbar-right form-inline">
     <!-- <form class='h2viewlogs' id="view-logs">
@@ -32,11 +43,11 @@
     </form>  -->
 
     <form class='h2viewlogs' id="view-logs">
-      <button class="btn btn-primary my-2 my-sm-0 btn-inline btn-large">View All My Coding Sessions</button>
+      <button class="btn btn-primary my-2 my-sm-0 btn-inline btn-large">View My Coding Sessions</button>
     </form>
 
 
-    <button class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Manage My Coding Sessions</button>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Add Coding Session</button>
 
       <button class="btn btn-primary" id="change-pw" data-toggle="modal" data-target="#passwordModal">
       Change Password
@@ -53,7 +64,27 @@
 
 
     <br>
+
+  <section class="message-section">
     <h2 id="message" class="message"></h2>
+
+    <h2 class="alert alert-success" role="alert"></h2>
+
+  </section>
+
+
+
+     <!-- <h1 style:"float:right" class="quote">Example Quote Text</h1>
+     <h2 style:"float:left" class="month">January</h2> -->
+
+     <h1 class="quote jan" style="text-align:left;  float:left;">"First we make our habits, <br> &nbsp then our habits make us"</h1>
+     <h2 class="month jan" id="jan" style="text-align:right; float:right;"> January <a href="#content-feb"> > <a> </h2>
+     <hr style="clear:both;"/>
+
+
+  <!-- <div class="other-months" style="text-align:right; float:right;">
+     <h2 class="feb">February</h2>
+  </div> -->
 
       <!-- AUTHENTICATION FORMS START HERE -->
 
@@ -89,7 +120,7 @@
 <div class="container login-container h2signup" id="login">
             <div class="row">
                 <div class="col-md-6 login-form-1">
-                    <h3>Sign Up</h3>
+                    <h3 class="login">Sign Up</h3>
                     <form id="sign-up">
                         <div class="form-group">
                             <input type="email" class="form-control" name="credentials[email]" placeholder="Enter Email *">
@@ -104,14 +135,14 @@
                             <input type="submit" class="btnSubmit" value="Login" />
                         </div>
                         <div class="form-group">
-                            <a href="#" class="ForgetPwd">Forgot Password?</a>
+                            <!-- <a href="#" class="ForgetPwd">Forgot Password?</a> -->
                         </div>
                     </form>
                 </div>
 
 
                 <div class="col-md-6 login-form-2 h2signin">
-                    <h3>Already Signed Up? Sign In Here!</h3>
+                    <h3 class="login">Already Signed Up? Sign In Here!</h3>
                     <form id="sign-in">
                         <div class="form-group">
                             <input type="email" class="form-control" name="credentials[email]" placeholder="Enter Email *">
@@ -124,7 +155,7 @@
                         </div>
                         <div class="form-group">
 
-                            <a href="#" class="ForgetPwd" value="Login">Forgot Password?</a>
+                            <!-- <a href="#" class="ForgetPwd" value="Login">Forgot Password?</a> -->
                         </div>
                     </form>
                 </div>
@@ -171,6 +202,8 @@
     <!-- MANAGE MY RESOURCES MODAL STARTS -->
 
 
+
+
     <!--Modal: Login / Register Form-->
 <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered cascading-modal" role="document">
@@ -201,7 +234,7 @@
                 <form id="add-log">
                   <input type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding" class="form-control form-control validate">
                   <input type="text" name="log[what_I_did]" placeholder="Summarize What You Did" class="form-control form-control validate" >
-                  <input type="string" name="log[date]" placeholder="Enter Date" class="form-control form-control validate">
+                  <input type="string" name="log[date]" placeholder="MM/DD" class="form-control form-control validate">
                 <!-- <input type="email" id="modalLRInput10" class="form-control form-control-sm validate"> -->
                 <!-- <label data-error="wrong" data-success="right" for="modalLRInput10">Your email</label> -->
                 <button class="btn btn-primary">Add Session</button>
@@ -212,25 +245,25 @@
               <div class="md-form form-sm mb-4">
                 <i class="fas fa-lock prefix"></i>
                 <h2 class='h2updatelog'>Update A Coding Session</h2>
-                <form id="update-log">
-                  <input class="form-control form-control validate" type="string" name="log[id]" placeholder="Enter Unique ID #">
-                  <input class="form-control form-control validate" type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding">
+                <form id="update-log" class="update-log">
+                  <!-- <input class="form-control form-control validate" type="string" name="log[id]" placeholder="Enter Unique ID #"> -->
+                  <input class="form-control form-control validate" id="hours" type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding">
                   <input class="form-control form-control validate" type="text" name="log[what_I_did]" placeholder="Summarize What You Did">
-                  <input class="form-control form-control validate" type="string" name="log[date]" placeholder="Enter Date">
-                  <button class="btn btn-primary">Update Session</button>
+                  <input class="form-control form-control validate" type="string" name="log[date]" placeholder="MM/DD">
+                  <button id='focustarget' value='none' class="update-button btn btn-primary" type="submit">Update Session</button>
                 </form>
                 <!-- <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
                 <label data-error="wrong" data-success="right" for="modalLRInput11">Your password</label> -->
               </div>
 
-              <div class="md-form form-sm mb-4">
+              <!-- <div class="md-form form-sm mb-4">
                 <i class="fas fa-lock prefix"></i>
                 <h2 class='h2deletelog'>Delete A Coding Session</h2>
                 <form id="delete-log">
                   <input class="form-control form-control validate" type="string" name="log[id]" placeholder="Enter Log # To Delete ">
                   <button class="btn btn-primary">Delete Session</button>
                 </form>
-              </div>
+              </div> -->
             </div>
 
             <!--Footer-->
@@ -292,8 +325,8 @@
 <!--Modal: Login / Register Form-->
 
 <div class="text-center">
-  <a href="" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalLRForm">Launch
-    Modal LogIn/Register</a>
+  <!-- <a href="" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalLRForm">Launch
+    Modal LogIn/Register</a> -->
 </div>
 
 
@@ -326,70 +359,25 @@
     </div>
   </div>
 </div>
-<!-- CHANGE PASSWORD Modal STARTS HERE -->
+<!-- CHANGE PASSWORD Modal ENDS HERE -->
 
 
-
-
-  <!-- CALENDAR STARTS HERE
-  Would like to set up event listener, so if you click on a date, you can Change
-  it's class and have it light up.
-  Not part of MVP though -->
-
-  <!-- <div class="month">
-  <ul>
-    <li class="prev">&#10094;</li>
-    <li class="next">&#10095;</li>
-    <li>December<br><span style="font-size:18px">2019</span></li>
-  </ul>
-</div>
-
-<ul class="weekdays">
-  <li>Mo</li>
-  <li>Tu</li>
-  <li>We</li>
-  <li>Th</li>
-  <li>Fr</li>
-  <li>Sa</li>
-  <li>Su</li>
-</ul>
-
-<ul id="days" class="days">
-  <li>2</li>
-  <li>3</li>
-  <li>4</li>
-  <li>5</li>
-  <li>6</li>
-  <li>7</li>
-  <li>7</li>
-  <li>8</li>
-  <li>9</li>
-  <li><span class="active">10</span></li>
-  <li>12</li>
-  <li>13</li>
-  <li>14</li>
-  <li>15</li>
-  <li>16</li>
-  <li>17</li>
-  <li>18</li>
-  <li>19</li>
-  <li>20</li>
-  <li>21</li>
-  <li>22</li>
-  <li>23</li>
-  <li>24</li>
-  <li>25</li>
-  <li>26</li>
-  <li>27</li>
-  <li>28</li>
-  <li>29</li>
-  <li>30</li>
-  <li>31</li>
-
-</ul> -->
 
 <section>
   <div id="content" class="content"></div>
+</section>
+
+
+
+<hr />
+<hr />
+<br>
+
+<section>
+  <h1 class="febquote feb" style="text-align:left;  float:left;">"Don't Think About Being Perfect, <br> &nbsp Think About Getting Better"</h1>
+  <h2 class="month feb" style="text-align:right; float:right;"><a href="#message"> < <a> February</h2>
+  <hr style="clear:both;"/>
+  <div id="content-feb" class="content-feb"></div>
 </section>
 
   </body>

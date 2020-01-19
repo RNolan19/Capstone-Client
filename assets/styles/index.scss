@@ -8,33 +8,138 @@
   color: red;
 }
 
+// .cards {
+//   display: grid;
+//   grid-template-columns: repeat(4, 1fr);
+//   grid-gap: 20px;
+//   padding: 20px;
+// }
+//
+// .playerCard {
+//   background: white;
+//   padding: 20px;
+// }
+
+.card-date {
+  font-family: 'Monoton', serif;
+}
+
 .card-group {
-  display: flex;
-display: inline-table;
+  // display: inline-grid;
+  // grid-template-columns: 200px 200px 200px 200px 200px;
+  // grid-template-rows: 60px 60px;
+  justify-content: center;
+
+
+
+  // grid-template-columns: repeat(4, 1fr);
+  margin-left: 4%;
+  // display: inline-block;
+  padding: 5px;
+  // align-content: center;
+  // margin-bottom: 5px;
+
+  display: inline-flex;
+  // align-content: center;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  //
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: center;
+  // justify-content: space-between;
 }
 
 .message {
-  // text-align: center;
+  text-align: center;
+  font-family: 'Prata', serif;
+  font-weight: bold;
+
+  // font-family:'Playfair', serif;
+  // font-size: 150%;
 }
 
 ul {
   list-style-type: none;
 }
 
+.divider {
+  background: url("./public/pressfield.png") no-repeat center center fixed;
+}
+
 body {
-  background: url("./public/today.png") no-repeat center center fixed;
-  background-size: cover;
+  background: url("./public/winter-background-4.jpg") no-repeat center center fixed;
+  background-color: white;
+  background-size: 100% 100%;
   font-family: Verdana, sans-serif;
+
 }
 
 .navbar {
   background-color: #89cff0;
+  // font-family: 'Playfair Display', serif;
+  // font-family: 'Berkshire Swash', cursive;
+  // font-family: 'Lalezar', cursive;
+  // font-weight: bold;
+  font-family: 'Nobile', serif;
+}
+
+.update-card,
+.delete-card {
+  font-family: 'Nobile', serif;
+}
+
+.alert-success {
+//   bottom: 10rem;
+// left: 0;
+margin: auto;
+max-width: 30rem;
+// position: fixed;
+// right: 0;
+// z-index: 10000;
+}
+
+.month {
+  color: white;
+  // display: flex;
+  // justify-content: flex-end;
+  text-align: right;
+  margin-right: 5%;
+  font-family: 'Berkshire Swash', cursive;
+
+  font-size: 450%;
+  // font-weight: bold;
+}
+
+.hours-coding {
+  font-size: 400%;
+  color: red;
+  font-family: 'Permanent Marker', serif;
+}
+
+.feb {
+  font-family: 'Playfair Display', serif;
+  color: #89cff0;
+  font-weight: bold;
+  // text-shadow: 2px 2px white;
+}
+
+.quote{
+  color: white;
+  // font-family: 'Berkshire Swash', cursive;
+  font-family: 'Playfair Display', serif;
 }
 
 // SIGN IN / SIGN UP MODAL
 .login-container {
   margin-top: 5%;
   margin-bottom: 5%;
+}
+
+.login {
+  font-family: 'Prata', serif;
+  font-weight: bold;
 }
 
 .login-form-1 {
@@ -93,72 +198,4 @@ body {
   color: #0062cc;
   font-weight: 600;
   text-decoration: none;
-}
-
-
-// CALENDAR START HERE
-
-/* Month header */
-.month {
-  padding: 70px 25px;
-  width: 100%;
-  background: #1abc9c;
-  text-align: center;
-}
-/* Month list */
-.month ul {
-  margin: 0;
-  padding: 0;
-}
-
-.month ul li {
-  color: white;
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-/* Previous button inside month header */
-.month .prev {
-  float: left;
-  padding-top: 10px;
-}
-/* Next button */
-.month .next {
-  float: right;
-  padding-top: 10px;
-}
-/* Weekdays (Mon-Sun) */
-.weekdays {
-  margin: 0;
-  padding: 10px 0;
-  background-color: #ddd;
-}
-
-.weekdays li {
-  display: inline-block;
-  width: 13.6%;
-  color: #666;
-  text-align: center;
-}
-/* Days (1-31) */
-.days {
-  padding: 10px 0;
-  background: #eee;
-  margin: 0;
-}
-
-.days li {
-  list-style-type: none;
-  display: inline-block;
-  width: 13.6%;
-  text-align: center;
-  margin-bottom: 5px;
-  font-size: 12px;
-  color: #777;
-}
-/* Highlight the "current" day */
-.days li .active {
-  padding: 5px;
-  background: #1abc9c;
-  color: white !important;
 }

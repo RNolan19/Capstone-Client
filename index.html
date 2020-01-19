@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>codeMitment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Prata&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nobile:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+
+
+    <!--- Include the above in your HEAD tag ->
+
+    <!- Do not add `link` tags-->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Do not add `script` tags-->
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+  </head>
+
+<!-- BODY STARTS HERE -->
+
+<body>
+
+  <!-- NAV BAR STARTS HERE -->
+
+  <nav class="navbar bg-primary text-white ">
+    <a class="navbar-brand">CodeMitment: The App That Tracks How Much Time You Spend Coding</a>
+
+    <div class="navbar-right form-inline">
+    <!-- <form class='h2viewlogs' id="view-logs">
+      <button class="btn btn-info my-2 my-sm-0 btn-inline btn-large">View All Coding Sessions</button>
+    </form>  -->
+
+    <form class='h2viewlogs' id="view-logs">
+      <button class="btn btn-primary my-2 my-sm-0 btn-inline btn-large">View My Coding Sessions</button>
+    </form>
+
+
+    <button class="btn btn-primary" data-toggle="modal" data-target="#modalLRForm">Add Coding Session</button>
+
+      <button class="btn btn-primary" id="change-pw" data-toggle="modal" data-target="#passwordModal">
+      Change Password
+      </button>
+
+
+
+      <form class='h2signout' id="sign-out">
+        <button class="btn btn-danger btn-inline btn-large" type="submit">Sign Out!</button>
+      </form>
+    </div>
+  </nav>
+<!-- NAV BAR ENDETH -->
+
+
+    <br>
+
+  <section class="message-section">
+    <h2 id="message" class="message"></h2>
+
+    <h2 class="alert alert-success" role="alert"></h2>
+
+  </section>
+
+
+
+     <!-- <h1 style:"float:right" class="quote">Example Quote Text</h1>
+     <h2 style:"float:left" class="month">January</h2> -->
+
+     <h1 class="quote jan" style="text-align:left;  float:left;">"First we make our habits, <br> &nbsp then our habits make us"</h1>
+     <h2 class="month jan" id="jan" style="text-align:right; float:right;"> January <a href="#content-feb"> > <a> </h2>
+     <hr style="clear:both;"/>
+
+
+  <!-- <div class="other-months" style="text-align:right; float:right;">
+     <h2 class="feb">February</h2>
+  </div> -->
+
+      <!-- AUTHENTICATION FORMS START HERE -->
+
+    <!-- <h2 class='h2signup'>Sign-up</h2>
+    <form id="sign-up">
+      <input type="email" name="credentials[email]" placeholder="Enter email....">
+      <input type="password" name="credentials[password]" placeholder="Enter password....">
+      <input type="password" name="credentials[password_confirmation]" placeholder="Enter password again....">
+      <button>Sign Up!</button>
+    </form> -->
+
+    <!-- <h2 class='h2signin'>Sign-in</h2>
+    <form>
+      <input type="email" name="credentials[email]" placeholder="Enter email....">
+      <input type="password" name="credentials[password]" placeholder="Enter password....">
+      <button>Sign In!</button>
+    </form> -->
+
+    <!-- <h2 class='h2changepassword'>Change Password</h2>
+    <form id="change-password">
+      <input type="password" name="passwords[old]" placeholder="Enter old password....">
+      <input type="password" name="passwords[new]" placeholder="Enter new password....">
+      <button>Change Password!</button>
+    </form> -->
+
+    <!-- <form class='h2signout' id="sign-out">
+      <button class="btn btn-info my-2 my-sm-0 btn-inline btn-large" type="submit">Sign Out!</button>
+    </form> -->
+    <!-- AUTHENTICATION FORMS END HERE -->
+
+
+   <!-- SIGN-IN + SIGN-UP MODAL STARTS HERE -->
+<div class="container login-container h2signup" id="login">
+            <div class="row">
+                <div class="col-md-6 login-form-1">
+                    <h3 class="login">Sign Up</h3>
+                    <form id="sign-up">
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="credentials[email]" placeholder="Enter Email *">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="credentials[password]" placeholder="Enter Password *">
+                        </div>
+                        <div class="form-group">
+                          <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Confirm Password *">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Login" />
+                        </div>
+                        <div class="form-group">
+                            <!-- <a href="#" class="ForgetPwd">Forgot Password?</a> -->
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="col-md-6 login-form-2 h2signin">
+                    <h3 class="login">Already Signed Up? Sign In Here!</h3>
+                    <form id="sign-in">
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="credentials[email]" placeholder="Enter Email *">
+                        </div>
+                        <div class="form-group">
+                          <input type="password" class="form-control" name="credentials[password]" placeholder="Enter Password *">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Login" />
+                        </div>
+                        <div class="form-group">
+
+                            <!-- <a href="#" class="ForgetPwd" value="Login">Forgot Password?</a> -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!-- SIGN-IN + SIGN-UP MODAL ENDS HERE -->
+
+
+
+    <!-- CRUD RESOURCE STARTS HERE -->
+
+    <!-- <h2 class='h2addlog'>Add A Coding Session</h2>
+    <form id="add-log">
+      <input type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding">
+      <input type="text" name="log[what_I_did]" placeholder="Summarize What You Did">
+      <input type="string" name="log[date]" placeholder="Enter Date">
+      <button>Create Session</button>
+    </form> -->
+
+    <!-- <h2 class='h2updatelog'>Update A Coding Session</h2>
+    <form id="update-log">
+      <input class=" mr-sm-2" type="string" name="log[id]" placeholder="Enter Unique ID #">
+      <input type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding">
+      <input type="text" name="log[what_I_did]" placeholder="Summarize What You Did">
+      <input type="string" name="log[date]" placeholder="Enter Date">
+      <button>Update Session</button>
+    </form> -->
+
+    <!-- <h2 class='h2deletelog'>Delete A Coding Session</h2>
+    <form id="delete-log">
+      <input type="string" name="log[id]" placeholder="Enter Log # To Delete ">
+      <button>Delete Session</button>
+    </form>
+    <br> -->
+
+    <!-- <form class='h2viewlogs' id="view-logs">
+      <button class="btn btn-info my-2 my-sm-0 btn-inline btn-large">View All Coding Sessions</button>
+    </form> -->
+
+    <!-- CRUD RESOURCE ENDS HERE -->
+
+
+
+    <!-- MANAGE MY RESOURCES MODAL STARTS -->
+
+
+
+
+    <!--Modal: Login / Register Form-->
+<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered cascading-modal" role="document">
+    <!--Content-->
+    <div class="modal-content">
+
+      <!--Modal cascading tabs-->
+      <div class="modal-c-tabs">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
+              Make Changes Below</a>
+          </li>
+        </ul>
+
+        <!-- Tab panels -->
+        <div class="tab-content">
+          <!--Panel 7-->
+          <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+            <!--Body-->
+            <div class="modal-body mb-1">
+              <div class="md-form form-sm mb-5">
+                <i class="fas fa-envelope prefix"></i>
+                <h2 class='h2addlog'>Add A Coding Session</h2>
+                <form id="add-log">
+                  <input type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding" class="form-control form-control validate">
+                  <input type="text" name="log[what_I_did]" placeholder="Summarize What You Did" class="form-control form-control validate" >
+                  <input type="string" name="log[date]" placeholder="MM/DD" class="form-control form-control validate">
+                <!-- <input type="email" id="modalLRInput10" class="form-control form-control-sm validate"> -->
+                <!-- <label data-error="wrong" data-success="right" for="modalLRInput10">Your email</label> -->
+                <button class="btn btn-primary">Add Session</button>
+              </form>
+              </div>
+
+
+              <div class="md-form form-sm mb-4">
+                <i class="fas fa-lock prefix"></i>
+                <h2 class='h2updatelog'>Update A Coding Session</h2>
+                <form id="update-log" class="update-log">
+                  <!-- <input class="form-control form-control validate" type="string" name="log[id]" placeholder="Enter Unique ID #"> -->
+                  <input class="form-control form-control validate" id="hours" type="number" name="log[hours_coding]" placeholder="# of Hours Spent Coding">
+                  <input class="form-control form-control validate" type="text" name="log[what_I_did]" placeholder="Summarize What You Did">
+                  <input class="form-control form-control validate" type="string" name="log[date]" placeholder="MM/DD">
+                  <button id='focustarget' value='none' class="update-button btn btn-primary" type="submit">Update Session</button>
+                </form>
+                <!-- <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="modalLRInput11">Your password</label> -->
+              </div>
+
+              <!-- <div class="md-form form-sm mb-4">
+                <i class="fas fa-lock prefix"></i>
+                <h2 class='h2deletelog'>Delete A Coding Session</h2>
+                <form id="delete-log">
+                  <input class="form-control form-control validate" type="string" name="log[id]" placeholder="Enter Log # To Delete ">
+                  <button class="btn btn-primary">Delete Session</button>
+                </form>
+              </div> -->
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer">
+              <!-- <div class="options text-center text-md-right mt-1">
+                <p>Not a member? <a href="#" class="blue-text">Sign Up</a></p>
+                <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+              </div> -->
+              <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+            </div>
+
+          </div>
+          <!--/.Panel 7-->
+
+          <!--Panel 8-->
+          <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+            <!--Body-->
+            <div class="modal-body">
+              <div class="md-form form-sm mb-5">
+                <i class="fas fa-envelope prefix"></i>
+                <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="modalLRInput12">Your email</label>
+              </div>
+
+              <div class="md-form form-sm mb-5">
+                <i class="fas fa-lock prefix"></i>
+                <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="modalLRInput13">Your password</label>
+              </div>
+
+              <div class="md-form form-sm mb-4">
+                <i class="fas fa-lock prefix"></i>
+                <input type="password" id="modalLRInput14" class="form-control form-control-sm validate">
+                <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>
+              </div>
+
+              <div class="text-center form-sm mt-2">
+                <button class="btn btn-info">Sign up <i class="fas fa-sign-in ml-1"></i></button>
+              </div>
+
+            </div>
+            <!--Footer-->
+            <div class="modal-footer">
+              <!-- <div class="options text-right">
+                <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
+              </div> -->
+              <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          <!--/.Panel 8-->
+        </div>
+
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!--Modal: Login / Register Form-->
+
+<div class="text-center">
+  <!-- <a href="" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalLRForm">Launch
+    Modal LogIn/Register</a> -->
+</div>
+
+
+    <!-- MANAGE MY RESOURCES MODAL ENDETH -->
+
+
+
+    <!-- CHANGE PASSWORD Modal STARTS HERE -->
+<div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="passwordModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="passwordModalLabel">Change Password</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+
+      <div class="modal-body">
+        <form class="form-inline h2changepassword" id="change-password">
+          <input type="password" class="form-control" name="passwords[old]" placeholder="Enter Old Password *">
+          <input type="password" class="form-control" name="passwords[new]" placeholder="Enter New Password *">
+          <button class="btn btn-primary">Save changes</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- CHANGE PASSWORD Modal ENDS HERE -->
+
+
+
+<section>
+  <div id="content" class="content"></div>
+</section>
+
+
+
+<hr />
+<hr />
+<br>
+
+<section>
+  <h1 class="febquote feb" style="text-align:left;  float:left;">"Don't Think About Being Perfect, <br> &nbsp Think About Getting Better"</h1>
+  <h2 class="month feb" style="text-align:right; float:right;"><a href="#message"> < <a> February</h2>
+  <hr style="clear:both;"/>
+  <div id="content-feb" class="content-feb"></div>
+</section>
+
+  </body>
+  </html>
